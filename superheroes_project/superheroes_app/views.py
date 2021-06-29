@@ -76,8 +76,5 @@ def create(request):
 
 
 def delete(request, superhero_id):
-    all_heroes = SuperHeroes.objects.filter(id=superhero_id).delete()
-    context = {
-        'all_heroes': all_heroes
-    }
-    return render(request, 'superheroes_app/index.html', context)
+    SuperHeroes.objects.filter(id=superhero_id).delete()
+    return HttpResponseRedirect(reverse('superheroes_app:index'))
