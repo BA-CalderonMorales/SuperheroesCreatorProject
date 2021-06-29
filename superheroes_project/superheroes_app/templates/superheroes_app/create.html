@@ -4,16 +4,31 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Create</title>
+        <title>Create a Hero</title>
     </head>
     <body>
-        <h1>Superhero Creator</h1>
-        <ul>
-            <h2>{{specific_hero.name}}</h2>
-            <h4>Alter ego: {{specific_hero.alter_ego}}</h4>
-            <h4>Primary Ability: {{specific_hero.primary_ability}}</h4>
-            <h4>Secondary Ability: {{specific_hero.secondary_ability}}</h4>
-            <h4>Catchphrase: {{specific_hero.catchphrase}}</h4>
-        </ul>
+        <center>
+        <h1>You can create a hero of your liking</h1>
+        <hr>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Alter-Ego</th>
+                <th>Primary Ability</th>
+                <th>Secondary Ability</th>
+                <th>Catchphrase</th>
+            </tr>
+            <tr>
+            <form action="{% url 'superheroes_app:create' %}" method="post">
+                {% csrf_token %}
+                <td><input type="text" name="name" id="name"></td>
+                <td><input type="text" name="alter_ego" id="alter_ego"></td>
+                <td><input type="text" name="primary_ability" id="primary_ability"></td>
+                <td><input type="text" name="secondary_ability" id="secondary_ability"></td>
+                <td><input type="text" name="catchphrase" id="catchphrase"></td>
+                <td><input type="submit" value="Submit"></td>
+            </form>
+            </tr>
+        </center>
     </body>
 </html>

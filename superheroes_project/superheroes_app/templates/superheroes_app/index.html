@@ -4,17 +4,32 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Title</title>
+        <title>Superhero Creator</title>
     </head>
     <body>
-        <h1>Superhero Creator</h1>
-        <ul>
-            {% for superhero in all_superheroes %}
-            <li>
-                <h2>{{superhero.name}}</h2>
-                <a href="{% url 'superheroes_app:detail' superhero.id %}">See more info</a>
-            </li>
-            {% endfor %}
-        </ul>
+        <center>
+            <h1>Superhero Creator</h1>
+            <table border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Alter-Ego</th>
+                    <th>Primary Ability</th>
+                    <th>Secondary Ability</th>
+                    <th>Catchphrase</th>
+                </tr>
+                {% for superhero in all_superheroes %}
+                <tr>
+                    <td>{{superhero.name}}</td>
+                    <td>{{superhero.alter_ego}}</td>
+                    <td>{{superhero.primary_ability}}</td>
+                    <td>{{superhero.secondary_ability}}</td>
+                    <td>{{superhero.catchphrase}}</td>
+                    <td><a href="{% url 'superheroes_app:detail' superhero.id %}">Details</a></td>
+                    <td><a href="{% url 'superheroes_app:edit' superhero.id %}">Edit</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+            <a href="{% url 'superheroes_app:create' %}">Create A Hero</a>
+        </center>
     </body>
 </html>
