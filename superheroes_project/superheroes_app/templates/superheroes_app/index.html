@@ -16,6 +16,9 @@
                     <th>Primary Ability</th>
                     <th>Secondary Ability</th>
                     <th>Catchphrase</th>
+                    <th></th>
+                    <th>Options</th>
+                    <th></th>
                 </tr>
                 {% for superhero in all_superheroes %}
                 <tr>
@@ -24,12 +27,29 @@
                     <td>{{superhero.primary_ability}}</td>
                     <td>{{superhero.secondary_ability}}</td>
                     <td>{{superhero.catchphrase}}</td>
-                    <td><a href="{% url 'superheroes_app:detail' superhero.id %}">Details</a></td>
-                    <td><a href="{% url 'superheroes_app:update' superhero.id %}">Update</a></td>
+                    <td>
+                        <a href="{% url 'superheroes_app:detail' superhero.id %}">
+                            <input type="button" name="Details" value="Details">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{% url 'superheroes_app:update' superhero.id %}">
+                            <input type="button" name="Update" value="Update">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{% url 'superheroes_app:delete' superhero.id %}">
+                            <input type="button" name="Delete" value="Delete">
+                        </a>
+                    </td>
                 </tr>
                 {% endfor %}
             </table>
-            <a href="{% url 'superheroes_app:create' %}">Create A Hero</a>
+            <hr>
+            <h3>You can also create a hero if you'd like. Give it a try by pressing on 'Create'</h3>
+            <a href="{% url 'superheroes_app:create' %}">
+                <input type="button" name="Create" value="Create">
+            </a>
         </center>
     </body>
 </html>

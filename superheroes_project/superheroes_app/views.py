@@ -74,3 +74,10 @@ def create(request):
     else:
         return render(request, 'superheroes_app/create.html')
 
+
+def delete(request, superhero_id):
+    all_heroes = SuperHeroes.objects.filter(id=superhero_id).delete()
+    context = {
+        'all_heroes': all_heroes
+    }
+    return render(request, 'superheroes_app/index.html', context)
