@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'superheroes_app.apps.SuperheroesAppConfig'
+    'superheroes_app.apps.SuperheroesAppConfig',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [

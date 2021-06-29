@@ -11,24 +11,48 @@
         <title>Chosen Hero</title>
     </head>
     <body>
-        <h1>{{specific_hero.name}}</h1>
-        <table>
-            <tr>
-                <th>Alter-Ego</th>
-                <th>Primary Ability</th>
-                <th>Secondary Ability</th>
-                <th>Catchphrase</th>
-            </tr>
-            <tr>
-                <td>{{specific_hero.alter_ego}}</td>
-                <td>{{specific_hero.primary_ability}}</td>
-                <td>{{specific_hero.secondary_ability}}</td>
-                <td>{{specific_hero.catchphrase}}</td>
-            </tr>
-        </table>
-        <a href="/">
-            <input type="button" name="Go Back" value="Home">
-        </a>
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
+                <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                    <h1 class="display-1">
+                        {{specific_hero.name}}
+                    </h1>
+                </div>
+                <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
+            </div>
+
+            <div class="row">
+                <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12"><hr/></div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table align-middle">
+                <thead class="table-secondary">
+                    <th>Alter-Ego</th>
+                    <th>Primary Ability</th>
+                    <th>Secondary Ability</th>
+                    <th>Catchphrase</th>
+                </thead>
+                <tr>
+                    <td>{{specific_hero.alter_ego}}</td>
+                    <td>{{specific_hero.primary_ability}}</td>
+                    <td>{{specific_hero.secondary_ability}}</td>
+                    <td>{{specific_hero.catchphrase}}</td>
+                </tr>
+            </table>
+            </div>
+
+            <div class="row">
+                <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <a href="/">
+                        <input type="button" class="btn btn-secondary btn-sm" name="Go Back" value="Home">
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
                 crossorigin="anonymous"></script>

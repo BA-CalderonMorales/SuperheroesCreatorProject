@@ -11,16 +11,44 @@
         <title>Edit and Update a Hero</title>
     </head>
     <body>
-        <h1>Edit and Update Superhero</h1>
-        <hr>
-        <h2>Looks like you want to change the info up on: current_hero</h2>
-        <form action="" method="POST" name="update">
-            {% csrf_token %}
-            {{form}}
-            <a href="{% url 'superheroes_app:edit' %}">
-                <input type="submit" name="Submit" value="Submit">
-            </a>
-        </form>
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
+                <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                    <h1 class="display-1">
+                        Edit and Update Superhero
+                    </h1>
+                </div>
+                <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
+            </div>
+
+            <div class="row">
+                <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12"><hr/></div>
+            </div>
+
+            {% load crispy_forms_tags %}
+
+            {% block content %}
+            <div class="row">
+                <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12"></div>
+                <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <form action="" method="POST" name="update">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <a href="{% url 'superheroes_app:edit' %}">
+                        <input type="submit" class="btn btn-secondary btn-sm" name="Submit" value="Update">
+                    </a>
+                    <a href="/">
+                        <input type="button" class="btn btn-secondary btn-sm" name="Go Back" value="Home">
+                    </a>
+                    </form>
+                </div>
+                <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12"></div>
+            </div>
+            {% endblock %}
+        </div>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
                 crossorigin="anonymous"></script>

@@ -8,14 +8,11 @@ class SuperHeroForm(ModelForm):
         model = SuperHeroes
         fields = '__all__'
         labels = {
-            'name': _('Superhero Name'),
+            'name': _('Name'),
             'alter_ego': _('Alter-Ego'),
-            'primary_ability': _('Primary Ability'),
-            'secondary_ability': _('Secondary Ability'),
+            'primary_ability': _('Ability One'),
+            'secondary_ability': _('Ability Two'),
             'catchphrase': _('Catchphrase'),
-        }
-        help_texts = {
-            'name': _('When creating a name, just try not to copy a hero already made.'),
         }
         error_messages = {
             'name': {
