@@ -26,39 +26,31 @@ def detail(request, superhero_id):
     return render(request, 'superheroes_app/specific_hero.html', context)
 
 
-def edit(request, superhero_id):
-    all_superheroes = SuperHeroes.objects.all()
-    for heroes in all_superheroes:
-        if heroes.id == superhero_id:
-            current_hero = SuperHeroes(
-                name=heroes.name,
-                alter_ego=heroes.alter_ego,
-                primary_ability=heroes.primary_ability,
-                secondary_ability=heroes.secondary_ability,
-                catchphrase=heroes.catchphrase
-            )
-    form = SuperHeroForm()
+def edit(request):
+    print("Print POST: ", request.POST)
+    form = SuperHeroForm(request.POST)
     if request.method == 'POST':
-        form = SuperHeroForm()
+        form = SuperHeroForm(request.POST)
         if form.is_valid():
             form.save()
+            return redirect('/')
     context = {
-        'form': form,
-        'current_hero': current_hero
+        'form': form
     }
     return render(request, 'superheroes_app/edit.html', context)
 
 
-def update(request, pk):
-    the_update = SuperHeroes.objects.get(id=pk)
-    form = SuperHeroForm(instance=the_update)
-
+def update(request, superhero_id):
+    the_hero = SuperHeroes.objects.get(pk=superhero_id)
+    form = SuperHeroForm(instance=the_hero)
     if request.method == 'POST':
-        form = SuperHeroForm(request.POST, instance=the_update)
+        form = SuperHeroForm(request.POST, instance=the_hero)
         if form.is_valid():
             form.save()
+            return redirect('/')
     context = {
-        'form': form
+        'form': form,
+        'the_hero': the_hero
     }
     return render(request, 'superheroes_app/edit.html', context)
 

@@ -25,7 +25,7 @@
                     <td>{{superhero.secondary_ability}}</td>
                     <td>{{superhero.catchphrase}}</td>
                     <td><a href="{% url 'superheroes_app:detail' superhero.id %}">Details</a></td>
-                    <td><a href="{% url 'superheroes_app:edit' superhero.id %}">Edit</a></td>
+                    <td><a href="{% url 'superheroes_app:update' superhero.id %}">Update</a></td>
                 </tr>
                 {% endfor %}
             </table>

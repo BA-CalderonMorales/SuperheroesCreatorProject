@@ -7,11 +7,11 @@ class SuperHeroes(models.Model):
     The constructor that builds what a Superhero object is. Will be used in conjunction with the most
     up-to-date database in MySQL server for this app.
     """
-    name = models.CharField(max_length=50)
-    alter_ego = models.CharField(max_length=50)
-    primary_ability = models.CharField(max_length=50)
-    secondary_ability = models.CharField(max_length=50)
-    catchphrase = models.CharField(max_length=100)
+    name = models.CharField(max_length=50, blank=True)
+    alter_ego = models.CharField(max_length=50, blank=True)
+    primary_ability = models.CharField(max_length=50, blank=True)
+    secondary_ability = models.CharField(max_length=50, blank=True)
+    catchphrase = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         """A string that will contain the current superheroes following characteristics: name,
