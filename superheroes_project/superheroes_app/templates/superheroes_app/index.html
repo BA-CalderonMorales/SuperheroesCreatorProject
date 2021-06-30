@@ -12,6 +12,33 @@
     </head>
     <body>
         <div class="container-fluid">
+            <div class="row p-5">
+                <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
+                <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand p-2" href="#">Superheros</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarCollapse">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/">Home</a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" href="{% url 'superheroes_app:create' %}">Add Your Hero</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
+            </div>
+
             <div class="row">
                 <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
                 <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"><h1 class="display-1">Superhero Creator</h1></div>
@@ -32,11 +59,11 @@
             </div>
 
             <div class="table-responsive">
-                <table class="table align-middle">
+                <table class="table vertical-align:top">
                     <caption>List of heroes</caption>
                     <thead class="table-secondary">
                         <th>Name</th>
-                        <th>Alter-Ego</th>
+                        <th>Alter Ego</th>
                         <th>Primary Ability</th>
                         <th>Secondary Ability</th>
                         <th>Catchphrase</th>
@@ -70,21 +97,6 @@
                     {% endfor %}
                 </table>
             </div>
-
-            <div class="row">
-                <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-                    <p class="lead">Click on 'Create' to make your own hero.</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <a href="{% url 'superheroes_app:create' %}">
-                        <input type="button" class="btn btn-secondary btn-sm" name="Create" value="Create">
-                    </a>
-                </div>
-            </div>
-
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

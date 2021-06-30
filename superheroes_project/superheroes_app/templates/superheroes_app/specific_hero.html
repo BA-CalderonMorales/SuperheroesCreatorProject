@@ -12,6 +12,32 @@
     </head>
     <body>
         <div class="container-fluid">
+            <div class="row p-5">
+                <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
+                <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand p-2" href="#">Superheros</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarCollapse">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/">Home</a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" href="{% url 'superheroes_app:create' %}">Add Your Hero</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
+            </div>
 
             <div class="row">
                 <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
@@ -30,7 +56,7 @@
             <div class="table-responsive">
                 <table class="table align-middle">
                 <thead class="table-secondary">
-                    <th>Alter-Ego</th>
+                    <th>Alter Ego</th>
                     <th>Primary Ability</th>
                     <th>Secondary Ability</th>
                     <th>Catchphrase</th>
@@ -42,14 +68,6 @@
                     <td>{{specific_hero.catchphrase}}</td>
                 </tr>
             </table>
-            </div>
-
-            <div class="row">
-                <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <a href="/">
-                        <input type="button" class="btn btn-secondary btn-sm" name="Go Back" value="Home">
-                    </a>
-                </div>
             </div>
         </div>
 
