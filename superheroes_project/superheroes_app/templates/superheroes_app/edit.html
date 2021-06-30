@@ -15,20 +15,20 @@
             <div class="row p-5">
                 <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
                 <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
                         <div class="container-fluid">
-                            <a class="navbar-brand p-2" href="#">Superheros</a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                            <a class="navbar-brand" href="#">Heroes</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                                <span class="navbar-toggler-icon"></span>
                             </button>
-                            <div class="collapse navbar-collapse" id="navbarCollapse">
-                                <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="/">Home</a>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="/">Home</a>
                                     </li>
-                                    <li>
+                                    <li class="nav-item">
                                         <a class="nav-link" href="{% url 'superheroes_app:create' %}">Add Your Hero</a>
                                     </li>
                                 </ul>
@@ -42,8 +42,8 @@
             <div class="row">
                 <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
                 <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                    <h1 class="display-1">
-                        Edit and Update Superhero
+                    <h1 class="display-1 text-center">
+                        Edit & Update A Hero
                     </h1>
                 </div>
                 <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
@@ -59,12 +59,12 @@
             <div class="row">
                 <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12"></div>
                 <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <div class="mb-3">
+                    <div class="mb-3 bg-info p-3 rounded">
                         <form action="" method="POST" name="update">
                             {% csrf_token %}
                             {{form|crispy}}
                             <a href="{% url 'superheroes_app:edit' %}">
-                                <input type="submit" class="btn btn-secondary btn-sm" name="Submit" value="Update">
+                                <input type="submit" class="btn btn-dark btn-sm mt-2" name="Submit" value="Update">
                             </a>
                         </form>
                     </div>
@@ -77,12 +77,5 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
                 crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-                integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-                crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-                integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-                crossorigin="anonymous"></script>
-
     </body>
 </html>

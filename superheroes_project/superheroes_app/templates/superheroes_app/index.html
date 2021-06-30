@@ -8,27 +8,30 @@
               rel="stylesheet"
               integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
               crossorigin="anonymous">
+        <!-- CSS CUSTOM -->
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'stylesheet.css' %}">
         <title>Superhero Creator</title>
     </head>
     <body>
         <div class="container-fluid">
-            <div class="row p-5">
+            <div class="row p-5 title-container">
                 <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
                 <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
                         <div class="container-fluid">
-                            <a class="navbar-brand p-2" href="#">Superheros</a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                            <a class="navbar-brand" href="#">Heroes</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                                <span class="navbar-toggler-icon"></span>
                             </button>
-                            <div class="collapse navbar-collapse" id="navbarCollapse">
-                                <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="/">Home</a>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="/">Home</a>
                                     </li>
-                                    <li>
+                                    <li class="nav-item">
                                         <a class="nav-link" href="{% url 'superheroes_app:create' %}">Add Your Hero</a>
                                     </li>
                                 </ul>
@@ -41,7 +44,7 @@
 
             <div class="row">
                 <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
-                <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"><h1 class="display-1">Superhero Creator</h1></div>
+                <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"><h1 class="display-1 text-center">Superhero Creator</h1></div>
                 <div class="col col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
             </div>
 
@@ -51,44 +54,50 @@
 
             <div class="row">
                 <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-                    <p class="lead">Welcome to the hero creator. Feel free to browse our list of heroes.
+                    <p class="lead p-3 mb-0 bg-dark text-light">Welcome to the hero creator. Feel free to browse our list of heroes.
                     If you happen to see one is missing, or if you see something wrong with one, feel free
-                    to go ahead and edit it. Also, if you see that a character isn't necessarily a "hero",
+                    to go ahead and edit it. </p>
+
+                    <p class="lead p-3 mb-0 bg-dark text-light">Also, if you see that a character isn't necessarily a "hero",
                     then please feel free to delete them from our database. Cheers!</p>
                 </div>
             </div>
 
+             <div class="row">
+                <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12"><hr/></div>
+             </div>
+
             <div class="table-responsive">
-                <table class="table vertical-align:top">
+                <table class="table table-hover table-light text-center">
                     <caption>List of heroes</caption>
                     <thead class="table-secondary">
-                        <th>Name</th>
-                        <th>Alter Ego</th>
-                        <th>Primary Ability</th>
-                        <th>Secondary Ability</th>
-                        <th>Catchphrase</th>
-                        <th></th>
-                        <th>Options</th>
-                        <th></th>
+                        <th class="p-3 mb-2 bg-dark text-light">Name</th>
+                        <th class="p-3 mb-2 bg-dark text-light">Alter Ego</th>
+                        <th class="p-3 mb-2 bg-dark text-light">Primary Ability</th>
+                        <th class="p-3 mb-2 bg-dark text-light">Secondary Ability</th>
+                        <th class="p-3 mb-2 bg-dark text-light">Catchphrase</th>
+                        <th class="p-3 mb-2 bg-dark text-light"></th>
+                        <th class="p-3 mb-2 bg-dark text-light">Options</th>
+                        <th class="p-3 mb-2 bg-dark text-light"></th>
                     </thead>
                     {% for superhero in all_superheroes %}
-                    <tr class="align-middle">
-                        <td>{{superhero.name}}</td>
-                        <td>{{superhero.alter_ego}}</td>
-                        <td>{{superhero.primary_ability}}</td>
-                        <td>{{superhero.secondary_ability}}</td>
-                        <td>{{superhero.catchphrase}}</td>
-                        <td>
+                    <tr class="align-middle" style="border:1; border-radius:4rem">
+                        <td class="p-3 mb-2 bg-light text-dark">{{superhero.name}}</td>
+                        <td class="p-3 mb-2 bg-light text-dark">{{superhero.alter_ego}}</td>
+                        <td class="p-3 mb-2 bg-light text-dark">{{superhero.primary_ability}}</td>
+                        <td class="p-3 mb-2 bg-light text-dark">{{superhero.secondary_ability}}</td>
+                        <td class="p-3 mb-2 bg-light text-dark">{{superhero.catchphrase}}</td>
+                        <td class="p-3 mb-2 bg-dark text-light">
                             <a href="{% url 'superheroes_app:detail' superhero.id %}">
                                 <input type="button" class="btn btn-secondary btn-sm" name="Details" value="Details">
                             </a>
                         </td>
-                        <td>
+                        <td class="p-3 mb-2 bg-dark text-light">
                             <a href="{% url 'superheroes_app:update' superhero.id %}">
                                 <input type="button" class="btn btn-secondary btn-sm" name="Update" value="Update">
                             </a>
                         </td>
-                        <td>
+                        <td class="p-3 mb-2 bg-dark text-light">
                             <a href="{% url 'superheroes_app:delete' superhero.id %}">
                                 <input type="button" class="btn btn-secondary btn-sm" name="Delete" value="Delete">
                             </a>

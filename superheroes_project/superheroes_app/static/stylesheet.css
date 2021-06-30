@@ -1,0 +1,5 @@
+'use-strict'
+body {
+    background-image: url('comic_background.jpg');
+    background-color: #cccccc;
+}
