@@ -4,3 +4,14 @@ In this project, I'm using Django to help me build my database for the project. 
 It's about 11:55 pm at the time of me posting this message (6/29): I was unable to successafully add images of superheroes onto my webpage today. Will be attempting to put some images on there tomorrow. Either way, this has been quite the learning experience. I learned how Django interacts with different IDEs, Python, MySQL, HTML5/CSS, and Bootstrap. This project was extremely fun to do, and overall, I believe that I've learned quite a few new tricks from this experience! Looking forward to being 100% done with this project (tomorrow)!
 
 QUICK DISCLAIMER: I intended to showcase how my project looks here on GitHub, but I was only able to post my README file 😂. I'll be trying to fix this tomorrow morning, too. Cheers!
+
+_ _ _ _ _
+
+Update: 07-08-2021
+On what was happening with my GitHub pages:
+
+In order to view this project, you would need to make sure that you would need to clone the repository, create your own MySQL database, and migrate all of your settings from the current project that you've cloned. Once your settings have been migrated, you would be able to run the program by going into the PyCharm terminal and entering: 
+
+python manage.py runserver
+
+One caviat: You need to make sure that you are in the correct directory in order to run the proegram. In my projects that followed this one, I'm going to attempt to make it so that anyone can view my Django project on GitHub pages. It will be a little bit of a journey, but I think it will help me see where I can get with publishing web apps on here!
