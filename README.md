@@ -10,7 +10,7 @@ _ _ _ _ _
 Update: 07-08-2021
 On what was happening with my GitHub pages:
 
-In order to view this project, you would need to make sure that you would need to clone the repository, create your own MySQL database, and migrate all of your settings from the current project that you've cloned. Once your settings have been migrated, you would be able to run the program by going into the PyCharm terminal and entering: 
+In order to view this project, you would need to make sure to clone the repository, create your own MySQL database, and migrate all of your settings from the current project that you've cloned to your MySQL database. Once your settings have been migrated, you would be able to run the program by going into the PyCharm terminal and entering: 
 
 python manage.py runserver
 
