@@ -1,5 +1,13 @@
-# repo_SuperheroesCreator
+# SuperheroesCreator
 In this project, I'm using Django to help me build my database for the project. The intention behind this project is to get my feet wet with using Django and how it's used in conjunction with Python, HTML/CSS, and Bootstrap. Another key concept that I'm coming to understand as I'm coming near completing this project is that CRUD is a fundamentally, powerful tool for someone to know. With this web app, I'm sure that I only touched the tip of the iceberg, but I feel pretty proud of myself for getting MySQL to function alongside with Python. I'm about 70% finished with this project (6/29/2021). I'll try and update here once more when I'm finished with the design aspects of the web app.
+
+## Well, I couldn't get the server to deploy on GitHub pages, but I got some snippets below of what it looks like!
+![image](https://user-images.githubusercontent.com/62074841/132035796-878a0263-0dc3-46c6-a081-df25ef1d5c18.png)
+<br>
+
+If you'd like to see it run in realtime, please reach out to me on here or feel free to message me on my LinkedIn.
+
+/// The text below is what I was trying to do before deploying the site. ///
 
 It's about 11:55 pm at the time of me posting this message (6/29): I was unable to successafully add images of superheroes onto my webpage today. Will be attempting to put some images on there tomorrow. Either way, this has been quite the learning experience. I learned how Django interacts with different IDEs, Python, MySQL, HTML5/CSS, and Bootstrap. This project was extremely fun to do, and overall, I believe that I've learned quite a few new tricks from this experience! Looking forward to being 100% done with this project (tomorrow)!
 
